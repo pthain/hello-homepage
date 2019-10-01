@@ -3,6 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  //Outline for the homepage
+  return (
+    <div>
+
+      <h1>Welcome.</h1>
+      <img src={logo} className="App-logo" alt="logo"/>
+      <div id='navBar'>
+        <p id='home'>Home</p>
+        <p id='resume'>Resume</p>
+        <p id='portfolio'>Portfolio</p>
+      </div>
+      <div id='display'>Dynamic content will be loaded here depending on which page the user chooses.</div>
+    </div>
+  )
+  /*
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +36,7 @@ function App() {
       </header>
     </div>
   );
+  */
 }
 
 export default App;
