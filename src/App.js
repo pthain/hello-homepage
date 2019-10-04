@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import file from "./resources/Resume_pthain.pdf"
+import PDFViewer from 'pdf-viewer-reactjs'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -25,11 +28,18 @@ render() {
       <div id='navBar'>
         <p
           id='home'
-          onClick={() => this.handleClick(0)}>Home
-        </p>
-        <p id='resume' onClick={() => this.handleClick(1)}>Resume</p>
-        <p id='portfolio' onClick={() => this.handleClick(2)}>Portfolio</p>
+          onClick={() => this.handleClick(0)}
+        >Home</p>
+        <p
+          id='resume'
+          onClick={() => this.handleClick(1)}
+        >Resume</p>
+        <p
+          id='portfolio'
+          onClick={() => this.handleClick(2)}
+        >Portfolio</p>
       </div>
+      <hr></hr>
       <div id='display'>{setDisplayDiv(this.state.choice)}</div>
     </div>
   )
@@ -47,26 +57,46 @@ render() {
 }*/
 function setDisplayDiv(i) {
   if (i === 0) {
-    return (
-      <div>
-        <h1>HOME!</h1>
-      </div>
-    )
+    return createHomeContent()
   }
   if (i === 1) {
-    return (
-      <div>
-        <h1>RESUME!</h1>
-      </div>
-    )
+    return createResumeContent()
   }
   if (i === 2) {
-    return (
-      <div>
-        <h1>PORTFOLIO!</h1>
-      </div>
-    )
+    return createPortfolioContent()
   }
+}
+
+function createHomeContent() {
+  return (
+    /* Any content displayed in the HOME tab goes here */
+    <div>
+      <p> This tab will contain information about me. </p>
+    </div>
+  )
+}
+function createResumeContent() {
+  return (
+    /* Any content displayed in the RESUME tab goes here */
+    <div>
+      <p>This tab will contain my resume.</p>
+      <PDFViewer document={{
+        url: file
+      }}
+      />
+    </div>
+  )
+}
+function createPortfolioContent() {
+  return (
+    /* Any content displayed in the Portfolio tab goes here */
+    <div>
+      <p>
+        This tab will contain a list of projects, with brief descriptions and
+         download instructions.
+      </p>
+    </div>
+  )
 }
   /*
   return (
