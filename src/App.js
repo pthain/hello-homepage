@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
+import profile from './resources/profile.jpg';
+//import logo from './logo.svg'
 import './App.css';
 
 import file from "./resources/Resume_pthain.pdf"
@@ -19,12 +20,12 @@ class App extends React.Component {
     })
   }
 
-  //Outline for the homepage
+//Outline for the homepage
 render() {
   return (
-    <div>
+    <div class="container">
       <h1>Welcome.</h1>
-      <img src={logo} className="App-logo" alt="logo"/>
+      <img src={profile} className="App-logo" alt="logo"/>
       <div id='navBar'>
         <p
           id='home'
@@ -71,7 +72,9 @@ function createHomeContent() {
   return (
     /* Any content displayed in the HOME tab goes here */
     <div>
-      <p> This tab will contain information about me. </p>
+      <p> My name is Phillip Thain. </p>
+      <br></br>
+      <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
     </div>
   )
 }
