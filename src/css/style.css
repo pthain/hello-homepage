@@ -1,0 +1,55 @@
+#root{
+  background-color:#f4f4f4;
+  color:#555;
+  width: 100%;
+}
+
+#main-header{
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+}
+
+#profile-photo{
+}
+
+.clr{
+  clear:both;
+}
+
+.img-float{
+  float:left;
+  width:35%;
+  height: auto;
+  /*max-width: 40%;*/
+  /*max-height: 400px;*/
+  padding: 10px 0;
+  border-color: #000;
+  margin-left: 0;
+  margin-right:10px;
+  box-sizing: border-box;
+}
+
+.container-float{
+  float: right;
+  max-width: 60%;
+}
+.container{
+  width:80%;
+  margin:auto;
+}
+
+.navbar{
+  background-color: #333333;
+  color: #fff;
+}
+
+.navbar ul{
+  padding: 0;
+  list-style: none;
+}
+
+.navbar li{
+  padding: 0px 20px;
+  display:inline;
+}

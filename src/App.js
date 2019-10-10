@@ -1,7 +1,7 @@
 import React from 'react';
-import profile from './resources/profile.jpg';
+import profile from './resources/thumb-profile.jpg';
 //import logo from './logo.svg'
-import './App.css';
+import './css/style.css';
 
 import file from "./resources/Resume_pthain.pdf"
 import PDFViewer from 'pdf-viewer-reactjs'
@@ -23,25 +23,37 @@ class App extends React.Component {
 //Outline for the homepage
 render() {
   return (
-    <div class="container">
-      <h1>Welcome.</h1>
-      <img src={profile} className="App-logo" alt="logo"/>
-      <div id='navBar'>
-        <p
-          id='home'
-          onClick={() => this.handleClick(0)}
-        >Home</p>
-        <p
-          id='resume'
-          onClick={() => this.handleClick(1)}
-        >Resume</p>
-        <p
-          id='portfolio'
-          onClick={() => this.handleClick(2)}
-        >Portfolio</p>
+    <div>
+      <header id="main-header">
+        <h1>Welcome.</h1>
+      </header>
+      <div class="container">
+        <img src={profile} class="img-float" id='profile-photo' alt="profile"/>
+        <div class="container-float">
+          <hr></hr>
+          <div id='display'>{setDisplayDiv(this.state.choice)}</div>
+        </div>
       </div>
-      <hr></hr>
-      <div id='display'>{setDisplayDiv(this.state.choice)}</div>
+
+      <div class="clr"></div>
+
+      <div class='navbar'>
+        <ul>
+          <li
+
+            id='home'
+            onClick={() => this.handleClick(0)}
+          >Home</li>
+          <li
+            id='resume'
+            onClick={() => this.handleClick(1)}
+          >Resume</li>
+          <li
+            id='portfolio'
+            onClick={() => this.handleClick(2)}
+          >Portfolio</li>
+        </ul>
+      </div>
     </div>
   )
 
@@ -75,6 +87,8 @@ function createHomeContent() {
       <p> My name is Phillip Thain. </p>
       <br></br>
       <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
+      <br></br>
+      <p>The rest of my bio will go here!</p>
     </div>
   )
 }
