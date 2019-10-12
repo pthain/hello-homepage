@@ -27,20 +27,11 @@ render() {
       <header id="main-header">
         <h1>Welcome.</h1>
       </header>
-      <div class="container">
-        <img src={profile} class="img-float" id='profile-photo' alt="profile"/>
-        <div class="container-float">
-          <hr></hr>
-          <div id='display'>{setDisplayDiv(this.state.choice)}</div>
-        </div>
-      </div>
-
+      <div id='display'>{setDisplayDiv(this.state.choice)}</div>
       <div class="clr"></div>
-
       <div class='navbar'>
         <ul>
           <li
-
             id='home'
             onClick={() => this.handleClick(0)}
           >Home</li>
@@ -84,11 +75,16 @@ function createHomeContent() {
   return (
     /* Any content displayed in the HOME tab goes here */
     <div>
-      <p> My name is Phillip Thain. </p>
-      <br></br>
-      <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
-      <br></br>
-      <p>The rest of my bio will go here!</p>
+      <div>
+        <img src={profile} class="img-float" id='profile-photo' alt="profile"/>
+      </div>
+      <div>
+        <p> My name is Phillip Thain. </p>
+        <br></br>
+        <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
+        <br></br>
+        <p>The rest of my bio will go here!</p>
+      </div>
     </div>
   )
 }
