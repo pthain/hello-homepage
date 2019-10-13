@@ -24,16 +24,9 @@ class App extends React.Component {
 render() {
   return (
     <div>
-      {/*Header*/}
-      <header id="main-header">
-        <h1>Welcome.</h1>
-      </header>
-
-      {/*Dynamic Content*/}
-      <div id='display'>{setDisplayDiv(this.state.choice)}</div>
-
+      <button class="fixed-element">I am fixed</button>
       {/*Navbar*/}
-      <div class='navbar'>
+      <div class="main-navbar fixed-element">
         <ul>
           <li id='home'onClick={() => this.handleClick(0)}>
             Home
@@ -46,6 +39,14 @@ render() {
           </li>
         </ul>
       </div>
+      {/*Header*/}
+      <header id="main-header">
+        <h1>Welcome.</h1>
+      </header>
+
+      {/*Dynamic Content*/}
+      <div id='display'>{setDisplayDiv(this.state.choice)}</div>
+
     </div>
   )
 
@@ -97,7 +98,7 @@ function createHomeContent() {
 function createResumeContent() {
   return (
     /* Any content displayed in the RESUME tab goes here */
-    <div>
+    <div class="wrapper-pdf">
       <p>This tab will contain my resume.</p>
       <PDFViewer document={{
         url: file
