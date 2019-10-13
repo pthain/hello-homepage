@@ -23,27 +23,35 @@
   grid-auto-rows:minmax(100px, auto);
   grid-gap:1em;
   justify-items:stretch;
-  align-items: start;
+  align-items: start; /* Do NOT match height of all gridboxes*/
 }
 
 .wrapper-element {
-  border: 1px #0c0 solid;
-  background: #0ff;
+  /* border: 1px #0c0 solid; */
+  /* background: #0ff; */
   padding: 1em;
 }
 
 .profile-image {
-  /*I want the image to scale with the box*/
   max-width: 100%;
+  max-height: 100%;
   min-width: 180px;
   min-height: 180px;
   height: auto;
 }
 
 .bio-text{
-  border: 1px solid #e3fe3f;
+  /* For Debugging | border: 1px solid #e3fe3f; */
 }
 
+@media(max-width:600px){
+  .wrapper{
+    margin: 0;
+    padding: 10px;
+    display: initial;
+    width:100%;
+  }
+}
 /*
 .clr{
   clear:both;
