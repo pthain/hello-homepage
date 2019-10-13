@@ -24,25 +24,26 @@ class App extends React.Component {
 render() {
   return (
     <div>
+      {/*Header*/}
       <header id="main-header">
         <h1>Welcome.</h1>
       </header>
+
+      {/*Dynamic Content*/}
       <div id='display'>{setDisplayDiv(this.state.choice)}</div>
-      <div class="clr"></div>
+
+      {/*Navbar*/}
       <div class='navbar'>
         <ul>
-          <li
-            id='home'
-            onClick={() => this.handleClick(0)}
-          >Home</li>
-          <li
-            id='resume'
-            onClick={() => this.handleClick(1)}
-          >Resume</li>
-          <li
-            id='portfolio'
-            onClick={() => this.handleClick(2)}
-          >Portfolio</li>
+          <li id='home'onClick={() => this.handleClick(0)}>
+            Home
+          </li>
+          <li id='resume' onClick={() => this.handleClick(1)}>
+            Resume
+          </li>
+          <li id='portfolio' onClick={() => this.handleClick(2)}>
+            Portfolio
+          </li>
         </ul>
       </div>
     </div>
@@ -74,16 +75,21 @@ function setDisplayDiv(i) {
 function createHomeContent() {
   return (
     /* Any content displayed in the HOME tab goes here */
-    <div>
-      <div>
-        <img src={profile} class="img-float" id='profile-photo' alt="profile"/>
+    <div class="wrapper">
+      {/*<img src={profile} class="profile-image wrapper-element" alt="profile"/>*/}
+      <div class="wrapper-element">
+        <div class="profile-image">
+          <img src={profile} class="profile-image" alt="profile"/>
+        </div>
       </div>
-      <div>
-        <p> My name is Phillip Thain. </p>
-        <br></br>
-        <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
-        <br></br>
-        <p>The rest of my bio will go here!</p>
+      <div class="wrapper-element">
+        <div class="bio-text">
+          <p> My name is Phillip Thain. </p>
+          <br></br>
+          <p>I am a recent grad from Purdue University with a degree in Computer Science.</p>
+          <br></br>
+          <p>The rest of my bio will go here!</p>
+        </div>
       </div>
     </div>
   )
