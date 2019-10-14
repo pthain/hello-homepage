@@ -4,6 +4,9 @@ import profile from './resources/thumb-profile.jpg';
 import './css/style.css';
 
 import file from "./resources/Resume_pthain.pdf"
+import {Document, Page, pdfjs} from 'react-pdf'
+//pdfjs.workerSrc  = './pdf.worker.js'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 class App extends React.Component {
   constructor(props) {
@@ -88,6 +91,7 @@ class App extends React.Component {
         /* Any content displayed in the RESUME tab goes here */
         <div id="resume-wrapper" class="wrapper-pdf">
             {/*PDFObject.embed(file, "#resume-wrapper")*/}
+            <Document file={file}><Page pageNumber={1}/></Document>
         </div>
       )
     }
