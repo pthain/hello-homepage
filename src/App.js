@@ -12,17 +12,19 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      choice: 0
+      pdfwidth: null,
+      choice:0
     }
   }
-
+  /** Helper Functions **/
+  //Click on one the navbar buttons
   handleClick(i) {
     this.setState({
       choice: i
     })
   }
 
-//Outline for the homepage
+  /** Main React element returned to index.html **/
   render() {
     return (
       <div id="main-flexbox-container">
@@ -56,7 +58,7 @@ class App extends React.Component {
         return createHomeContent()
       }
       if (i === 1) {
-        return createResumeContent()
+        return createResumeContent(this)
       }
       if (i === 2) {
         return createPortfolioContent()
@@ -88,10 +90,11 @@ class App extends React.Component {
 
     function createResumeContent() {
       return (
+
         /* Any content displayed in the RESUME tab goes here */
-        <div id="resume-wrapper" class="wrapper-pdf">
+        <div id="resumeContainer" class="wrapper-pdf">
             {/*PDFObject.embed(file, "#resume-wrapper")*/}
-            <Document file={file}><Page pageNumber={1}/></Document>
+            <PdfComponent wrapperDivWidth={1000}/>
         </div>
       )
     }
@@ -109,4 +112,17 @@ class App extends React.Component {
     }
   }
 }
+
+class PdfComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <Document file={file}>
+          <Page class="resume-pdf" width={this.props.wrapperDivWidth} height={this.props.wrapperDivHeight} pageNumber={1}></Page>
+        </Document>
+      </div>
+    )
+  }
+}
+
 export default App;
