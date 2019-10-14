@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "pdf-viewer-reactjs": "^1.0.5",
+    "pdfobject": "^2.1.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-pdf": "^4.1.0",

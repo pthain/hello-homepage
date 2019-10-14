@@ -4,7 +4,7 @@ import profile from './resources/thumb-profile.jpg';
 import './css/style.css';
 
 import file from "./resources/Resume_pthain.pdf"
-import PDFViewer from 'pdf-viewer-reactjs'
+import PDFObject from 'pdfobject'
 
 class App extends React.Component {
   constructor(props) {
@@ -23,10 +23,17 @@ class App extends React.Component {
 //Outline for the homepage
 render() {
   return (
-    <div>
-      <button class="fixed-element">I am fixed</button>
+    <div id="main-flexbox-container">
+      {/*Header*/}
+      <header id="main-header">
+        <h1>Welcome.</h1>
+      </header>
+
+      {/*Dynamic Content*/}
+      <div id="main-content-display">{setDisplayDiv(this.state.choice)}</div>
+
       {/*Navbar*/}
-      <div class="main-navbar fixed-element">
+      <div id="main-footer" class="navbar-dark">
         <ul>
           <li id='home'onClick={() => this.handleClick(0)}>
             Home
@@ -39,14 +46,6 @@ render() {
           </li>
         </ul>
       </div>
-      {/*Header*/}
-      <header id="main-header">
-        <h1>Welcome.</h1>
-      </header>
-
-      {/*Dynamic Content*/}
-      <div id='display'>{setDisplayDiv(this.state.choice)}</div>
-
     </div>
   )
 
@@ -98,12 +97,9 @@ function createHomeContent() {
 function createResumeContent() {
   return (
     /* Any content displayed in the RESUME tab goes here */
-    <div class="wrapper-pdf">
-      <p>This tab will contain my resume.</p>
-      <PDFViewer document={{
-        url: file
-      }}
-      />
+    <div id="resume-wrapper" class="wrapper-pdf">
+        {/*PDFObject.embed(file, "#resume-wrapper")*/}
+        <embed src={file}></embed>
     </div>
   )
 }
